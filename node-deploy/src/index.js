@@ -32,7 +32,8 @@ const APPLICATION_NAME = accessEnv("APPLICATION_NAME")
 
 const MAX_BUFFER_SIZE = 1024 * 1024 // 1 MiB
 
-const awsRegion = outputs["aws-region"].value
+const awsRegion = "us-east-1"
+// const awsRegion = outputs["aws-region"].value
 
 const codeDeployClient = new AWS.CodeDeploy({
   accessKeyId: accessEnv("AWS_ACCESS_KEY_ID"),
