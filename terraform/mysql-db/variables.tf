@@ -1,6 +1,6 @@
 variable "apply-immediately" {
   type    = bool
-  default = false
+  default = true
 }
 
 variable "db-name" {
