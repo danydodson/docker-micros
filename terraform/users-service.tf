@@ -1,0 +1,39 @@
+resource "aws_eip" "users-service-eip" {
+  instance = module.users-service.instance-id
+}
+
+module "users-service" {
+  source = "./node-server"
+
+  ami-id               = "ami-0e2ff28bfb72a4e45" // For Amazon Linux AMI 2018.03.0 use ami-07ebfd5b3428b6f4d
+  iam-instance-profile = module.users-service-codedeploy.iam-instance-profile
+  key-pair             = aws_key_pair.docker-micros-key.key_name
+  name                 = "users-service"
+  private-ip           = "10.0.1.6"
+  subnet-id            = aws_subnet.docker-micros-subnet-private-1.id
+  vpc-security-group-ids = [
+    aws_security_group.allow-internal-http.id,
+    aws_security_group.allow-ssh.id,
+    aws_security_group.allow-all-outbound.id
+  ]
+}
+
+module "users-service-codedeploy" {
+  source = "./codedeploy-app"
+
+  app-name          = "users-service"
+  ec2-instance-name = module.users-service.name
+}
+
+module "users-service-db" {
+  source = "./mysql-db"
+
+  apply-immediately      = true
+  db-name                = "db"
+  db-subnet-group-name   = aws_db_subnet_group.private.id
+  identifier             = "users-service-db"
+  password               = var.users-service-db-password
+  publicly-accessible    = false
+  username               = var.users-service-db-username
+  vpc-security-group-ids = [aws_security_group.allow-internal-mysql.id]
+}
