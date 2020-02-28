@@ -1,4 +1,4 @@
-import "@babel/polyfill";
-import "dotenv/config";
+import "@babel/polyfill"
+import "dotenv/config"
 
-import "#root/server/startServer";
+import "#root/server/startServer"

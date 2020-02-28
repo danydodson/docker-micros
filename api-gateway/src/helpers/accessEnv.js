@@ -2,19 +2,19 @@
 // always run this method in advance (i.e. upon initialisation) so that the error is thrown as early as possible
 // caching the values improves performance - accessing process.env many times is bad
 
-const cache = {};
+const cache = {}
 
 const accessEnv = (key, defaultValue) => {
   if (!(key in process.env)) {
-    if (defaultValue) return defaultValue;
-    throw new Error(`${key} not found in process.env!`);
+    if (defaultValue) return defaultValue
+    throw new Error(`${key} not found in process.env!`)
   }
 
-  if (cache[key]) return cache[key];
+  if (cache[key]) return cache[key]
 
-  cache[key] = process.env[key];
+  cache[key] = process.env[key]
 
-  return process.env[key];
-};
+  return process.env[key]
+}
 
-export default accessEnv;
+export default accessEnv

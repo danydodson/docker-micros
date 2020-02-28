@@ -1,12 +1,12 @@
-import _ from "lodash";
+import _ from "lodash"
 
 const formatGraphQLErrors = error => {
-  const errorDetails = _.get(error, "originalError.response.body");
+  const errorDetails = _.get(error, "originalError.response.body")
   try {
-    if (errorDetails) return JSON.parse(errorDetails);
-  } catch (e) {}
+    if (errorDetails) return JSON.parse(errorDetails)
+  } catch (e) { }
 
-  return null;
-};
+  return null
+}
 
-export default formatGraphQLErrors;
+export default formatGraphQLErrors

@@ -1,4 +1,4 @@
-import { gql } from "apollo-server";
+import { gql } from "apollo-server"
 
 const typeDefs = gql`
   scalar Date
@@ -32,6 +32,6 @@ const typeDefs = gql`
     listings: [Listing!]!
     userSession(me: Boolean!): UserSession
   }
-`;
+`
 
-export default typeDefs;
+export default typeDefs
