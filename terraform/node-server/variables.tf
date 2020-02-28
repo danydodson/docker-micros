@@ -26,7 +26,7 @@ variable "private-ip" {
 }
 
 variable "subnet-id" {
-  # default = ""
+  default = ""
   type    = string
 }
 

@@ -5,7 +5,7 @@ resource "aws_eip" "api-gateway-eip" {
 module "api-gateway" {
   source = "./node-server"
 
-  ami-id               = "ami-0a887e401f7654935"
+  ami-id               = "ami-07ebfd5b3428b6f4d"
   iam-instance-profile = module.api-gateway-codedeploy.iam-instance-profile
   key-pair             = aws_key_pair.docker-micros-key.key_name
   name                 = "api-gateway"

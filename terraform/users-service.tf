@@ -5,7 +5,7 @@ resource "aws_eip" "users-service-eip" {
 module "users-service" {
   source = "./node-server"
 
-  ami-id               = "ami-0a887e401f7654935"
+  ami-id               = "ami-07ebfd5b3428b6f4d"
   iam-instance-profile = module.users-service-codedeploy.iam-instance-profile
   key-pair             = aws_key_pair.docker-micros-key.key_name
   name                 = "users-service"
