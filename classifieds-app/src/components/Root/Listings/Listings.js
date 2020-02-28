@@ -1,13 +1,13 @@
-import gql from "graphql-tag";
-import React from "react";
-import { useQuery } from "react-apollo";
-import styled from "styled-components";
+import gql from "graphql-tag"
+import React from "react"
+import { useQuery } from "react-apollo"
+import styled from "styled-components"
 
-import AddListing from "./AddListing";
+import AddListing from "./AddListing"
 
 const Description = styled.p`
   margin-bottom: 0;
-`;
+`
 
 const Listing = styled.div`
   padding: 1rem 0;
@@ -15,15 +15,15 @@ const Listing = styled.div`
   :not(:last-child) {
     border-bottom: 1px solid ${props => props.theme.veryLightGrey};
   }
-`;
+`
 
 const Title = styled.strong`
   display: block;
   font-size: 1.5rem;
   font-weight: 700;
-`;
+`
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div``
 
 const query = gql`
   {
@@ -33,12 +33,12 @@ const query = gql`
       title
     }
   }
-`;
+`
 
 const Listings = () => {
-  const { data, loading, refetch } = useQuery(query);
+  const { data, loading, refetch } = useQuery(query)
 
-  if (loading) return "Loading...";
+  if (loading) return "Loading..."
 
   return (
     <Wrapper>
@@ -52,11 +52,11 @@ const Listings = () => {
       </div>
       <AddListing
         onAddListing={() => {
-          refetch();
+          refetch()
         }}
       />
     </Wrapper>
-  );
-};
+  )
+}
 
-export default Listings;
+export default Listings

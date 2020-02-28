@@ -1,27 +1,27 @@
 // actions
-const CLEAR = "session/CLEAR";
-const SET = "session/SET";
+const CLEAR = "session/CLEAR"
+const SET = "session/SET"
 
-const DEFAULT_STATE = null;
+const DEFAULT_STATE = null
 
 // reducer
 const sessionReducer = (state = DEFAULT_STATE, action = {}) => {
   switch (action.type) {
     case SET:
-      return action.session;
+      return action.session
     case CLEAR:
-      return null;
+      return null
   }
-  return state;
-};
+  return state
+}
 
-export default sessionReducer;
+export default sessionReducer
 
 // action creators
 export const setSession = session => {
-  return { session, type: SET };
-};
+  return { session, type: SET }
+}
 
 export const clearSession = () => {
-  return { type: CLEAR };
-};
+  return { type: CLEAR }
+}

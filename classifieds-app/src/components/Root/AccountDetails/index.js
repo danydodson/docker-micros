@@ -1,3 +1,3 @@
-import AccountDetails from "./AccountDetails";
+import AccountDetails from "./AccountDetails"
 
-export default AccountDetails;
+export default AccountDetails

@@ -1,3 +1,3 @@
-import AddListing from "./AddListing";
+import AddListing from "./AddListing"
 
-export default AddListing;
+export default AddListing

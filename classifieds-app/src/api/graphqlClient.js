@@ -1,8 +1,8 @@
-import { ApolloClient } from "apollo-client";
-import { HttpLink } from "apollo-link-http";
-import { InMemoryCache } from "apollo-cache-inmemory";
+import { ApolloClient } from "apollo-client"
+import { HttpLink } from "apollo-link-http"
+import { InMemoryCache } from "apollo-cache-inmemory"
 
-export const cache = new InMemoryCache();
+export const cache = new InMemoryCache()
 
 const client = new ApolloClient({
   cache,
@@ -10,6 +10,6 @@ const client = new ApolloClient({
     credentials: "include",
     uri: process.env.SERVICES_URI + "/graphql"
   })
-});
+})
 
-export default client;
+export default client
