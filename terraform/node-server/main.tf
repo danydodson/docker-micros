@@ -13,20 +13,20 @@ cd /tmp
 echo '#!/bin/bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 source ~/.bashrc
-nvm install --lts
+nvm i 12.13.0
 curl -o- -L https://yarnpkg.com/install.sh | bash
 sudo yum install -y ruby wget
-cd /home/ubuntu
+cd /home/ec2-user
 wget https://aws-codedeploy-ap-southeast-2.s3.ap-southeast-2.amazonaws.com/latest/install
 chmod +x ./install
 sudo ./install auto
-sudo ln -s /home/ubuntu/.nvm/versions/node/v12.16.1/bin/node /usr/bin
-sudo ln -s /home/ubuntu/.nvm/versions/node/v12.16.1/bin/npm /usr/bin
-sudo ln -s /home/ubuntu/.yarn/bin/yarn /usr/bin
+sudo ln -s /home/ec2-user/.nvm/versions/node/v12.13.0/bin/node /usr/bin
+sudo ln -s /home/ec2-user/.nvm/versions/node/v12.13.0/bin/npm /usr/bin
+sudo ln -s /home/ec2-user/.yarn/bin/yarn /usr/bin
 sudo yarn global add pm2
 sudo ln -s /usr/local/bin/pm2 /usr/bin' >> init.sh
 chmod +x init.sh
-/bin/su -c "/tmp/init.sh" - ubuntu
+/bin/su -c "/tmp/init.sh" - ec2-user
 rm init.sh
 EOF
 

@@ -1,3 +1,3 @@
 #!/bin/sh
 cd /opt
-chown -R ubuntu ./docker-micros
+chown -R ec2-user ./docker-micros

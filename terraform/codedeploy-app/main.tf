@@ -28,9 +28,9 @@ resource "aws_codedeploy_app" "default" {
   name             = var.app-name
 }
 
-resource "aws_codedeploy_deployment_group" "dev" {
+resource "aws_codedeploy_deployment_group" "prod" {
   app_name              = aws_codedeploy_app.default.name
-  deployment_group_name = "dev"
+  deployment_group_name = "prod"
   service_role_arn      = aws_iam_role.codedeploy-role.arn
 
   ec2_tag_set {
