@@ -5,7 +5,7 @@ resource "aws_eip" "listings-service-eip" {
 module "listings-service" {
   source = "./node-server"
 
-  ami-id               = "ami-0a887e401f7654935" // Amazon Linux 2 AMI (HVM), SSD Volume Type
+  ami-id               = "ami-0a887e401f7654935"
   iam-instance-profile = module.listings-service-codedeploy.iam-instance-profile
   key-pair             = aws_key_pair.docker-micros-key.key_name
   name                 = "listings-service"
