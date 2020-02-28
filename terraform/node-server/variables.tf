@@ -8,8 +8,8 @@ variable "iam-instance-profile" {
 }
 
 variable "instance-type" {
-  type    = string
   default = "t2.micro"
+  type    = string
 }
 
 variable "name" {

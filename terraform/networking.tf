@@ -100,7 +100,6 @@ resource "aws_security_group" "allow-all-outbound" {
 }
 
 resource "aws_subnet" "docker-micros-subnet-public" {
-  # availability_zone_id = "apse2-az1"
   availability_zone_id = "use1-az1"
   cidr_block           = "10.0.0.0/24"
   vpc_id               = aws_vpc.docker-micros.id
@@ -111,7 +110,6 @@ resource "aws_subnet" "docker-micros-subnet-public" {
 }
 
 resource "aws_subnet" "docker-micros-subnet-private-1" {
-  # availability_zone_id = "apse2-az1"
   availability_zone_id = "use1-az1"
   cidr_block           = "10.0.1.0/24"
   vpc_id               = aws_vpc.docker-micros.id
@@ -122,7 +120,6 @@ resource "aws_subnet" "docker-micros-subnet-private-1" {
 }
 
 resource "aws_subnet" "docker-micros-subnet-private-2" {
-  # availability_zone_id = "apse2-az2"
   availability_zone_id = "use1-az2"
   cidr_block           = "10.0.2.0/24"
   vpc_id               = aws_vpc.docker-micros.id
@@ -137,6 +134,6 @@ resource "aws_vpc" "docker-micros" {
   enable_dns_hostnames = true
 
   tags = {
-    Name = "Docker Micros Demo VPC"
+    Name = "Docker Micros VPC"
   }
 }
