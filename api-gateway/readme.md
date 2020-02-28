@@ -4,7 +4,7 @@ Create the following files
 
 ### .deploy.env
 ~~~sh
-APPLICATION_NAME=listings-service
+APPLICATION_NAME=api-gateway
 AWS_ACCESS_KEY_ID=
 AWS_ACCESS_KEY_SECRET=
 CODEDEPLOY_DEPLOYMENT_GROUP_NAME=dev
